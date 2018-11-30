@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script>
+        function initRemJs(width, maxWidth) {
+            var calc = function(event) {
+                var clientWidth = window.document.documentElement.clientWidth;
+                if (maxWidth && clientWidth > maxWidth) {
+                    clientWidth = maxWidth;
+                }
+                var fontSize = (clientWidth / width) * 100;
+                window.document.documentElement.style.fontSize = fontSize + 'px';
+            }
+            if ('orientationchange' in window) {
+                window.addEventListener('orientationchange', calc, false);
+            }
+            window.addEventListener('resize', calc, false);
+            window.document.addEventListener('DOMContentLoaded', calc, false);
+        }
+
+        initRemJs(375);
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .article {
+            padding: 0.1rem 0.1rem;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        .article::after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+        .article-img {
+            float:left;
+            display: block;
+            height: 0.8rem;
+            width: 1.2rem;
+        }
+        .article-title {
+            font-size: 0.14rem;
+            line-height: 0.2rem;
+            height: 0.4rem;
+            overflow: hidden;
+            float: left;
+            width: 2.1rem;
+            margin: 0.2rem 0.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="article">
+        <img class="article-img" src="//cms-bucket.nosdn.127.net/2018/11/30/af23fea9f48e4dd4a1e0d089305e77ea.jpeg?imageView&thumbnail=234y146&quality=45&interlace=1&enlarge=1&type=webp">
+        <p class="article-title">《炉石传说》投票免费获得拉斯塔哈的大乱斗卡包</p>
+    </div>
+</body>
+</html>
